@@ -15,6 +15,13 @@ pipeline {
         echo 'This is dev.'
       }
     }
+   
+   stage('custom1') {    
+   }
+   stage('custom2') {    
+   }
+   stage('custom3') {    
+   }
     
     stage('Bye') {
       when {
