@@ -17,10 +17,19 @@ pipeline {
     }
    
    stage('custom1') {    
+    steps {
+     echo 'custom stage test1'
+    }
    }
-   stage('custom2') {    
+   stage('custom2') {      
+    steps {
+     echo 'custom stage test2'
+    }  
    }
-   stage('custom3') {    
+   stage('custom3') {      
+    steps {
+     echo 'custom stage test3'
+    }  
    }
     
     stage('Bye') {
