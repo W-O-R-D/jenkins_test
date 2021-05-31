@@ -15,6 +15,22 @@ pipeline {
         echo 'This is dev.'
       }
     }
+   
+   stage('custom1') {    
+    steps {
+     echo 'custom stage test1'
+    }
+   }
+   stage('custom2') {      
+    steps {
+     echo 'custom stage test2'
+    }  
+   }
+   stage('custom3') {      
+    steps {
+     echo 'custom stage test3'
+    }  
+   }
     
     stage('Bye') {
       when {
@@ -26,4 +42,27 @@ pipeline {
       }
     }
   }
+}
+
+node {
+ def env = 'dev'
+ def sth = 'hello'
+ 
+ if(env == 'dev') {
+  sth = 'bye'
+ }
+ 
+ stage('Start build') {
+  echo "mvn -p $sth"
+  print("$sth")
+ }
+}
+
+node('docker') {
+ checkout scm
+ stage('Build') {
+  docker.image('node:6.3').inside {
+   sh 'npm ?version'
+  }
+ }
 }
