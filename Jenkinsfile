@@ -43,3 +43,17 @@ pipeline {
     }
   }
 }
+
+node {
+ def env = 'dev'
+ def sth = 'hello'
+ 
+ if(env == 'dev') {
+  sth = 'bye'
+ }
+ 
+ stage('Start build') {
+  echo "mvn -p $sth"
+  print("$sth")
+ }
+}
