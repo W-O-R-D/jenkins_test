@@ -57,7 +57,7 @@ node {
   print("$sth")
  }
 }
-
+'''
 node('docker') {
  checkout scm
  stage('Build') {
@@ -66,3 +66,4 @@ node('docker') {
   }
  }
 }
+'''
