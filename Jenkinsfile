@@ -56,6 +56,10 @@ node {
   echo "mvn -p $sth"
   print("$sth")
  }
+ 
+ stage('custom stage') {
+  echo "hello jenkins"
+ }
 }
 '''
 node('docker') {
