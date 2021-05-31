@@ -60,6 +60,10 @@ node {
  stage('custom stage') {
   echo "hello jenkins"
  }
+ 
+ stage('custom stage2') {
+  echo "hello jenkins"
+ }
 }
 '''
 node('docker') {
